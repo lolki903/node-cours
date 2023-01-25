@@ -1,14 +1,14 @@
 version: '3.3'
 services:
   node:
-    container_name: project name
+    container_name: MDS-Node
     image: node:latest
     working_dir: /home/node/app
-    volumes:
-      - bin/sh
-      - 'c'
+    command:
+      - /bin/sh
+      - '-c'
       - 'npm install && npm start'
     ports:
       - '3000:3000'
-  volumes:
-    - './src:/home/node/app'
+    volumes:
+      - './src:/home/node/app'
